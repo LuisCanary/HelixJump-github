@@ -9,16 +9,27 @@ public class HelixController : MonoBehaviour
     private Vector3 startRotation;
 
 
+    public Transform topTransform;
+    public Transform goalTransform;
+    public GameObject helixLevelPrefab;
+
+    public List<Stage> allStages = new List<Stage>();
+    private float helixDistance;
+    private List<GameObject> spawnedLevels = new List<GameObject>();
+
+
+
     private void Awake()
     {
         startRotation = transform.localEulerAngles;
+
+        helixDistance = topTransform.localPosition.y - goalTransform.localPosition.y+0.1f;
     }
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
 
@@ -43,4 +54,21 @@ public class HelixController : MonoBehaviour
         }
 
     }
+
+    public void LoadStage(int stageNumber)
+    {
+        Stage stage = allStages[Mathf.Clamp(stageNumber, 0, allStages.Count - 1)];
+
+        if (stage==null)
+        {
+            Debug.LogError("No stage" + stageNumber + " found in allStages List. Are all stages assigned in the List?");
+            return;
+        }
+
+    }
+
+
+
+
+
 }

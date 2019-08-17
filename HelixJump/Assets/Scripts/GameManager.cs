@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        best = PlayerPrefs.GetInt("HighScore");
     }
 
     public void NextLevel()
@@ -34,6 +36,9 @@ public class GameManager : MonoBehaviour
     public void RestartLevel()
     {
 
+        singleton.score = 0;
+        FindObjectOfType<BallController>().ResetBall();
+        //Reload Stage
     }
     public void AddScore(int scoreToAdd)
     {
@@ -41,6 +46,7 @@ public class GameManager : MonoBehaviour
         if (score>best)
         {
             best = score;
+            PlayerPrefs.SetInt("HighScore",score);
             //Store highscore
         }
     }
