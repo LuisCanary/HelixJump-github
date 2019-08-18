@@ -31,13 +31,16 @@ public class GameManager : MonoBehaviour
 
     public void NextLevel()
     {
-
+        currentStage++;
+        FindObjectOfType<BallController>().ResetBall();
+        FindObjectOfType<HelixController>().LoadStage(currentStage);
     }
     public void RestartLevel()
     {
 
         singleton.score = 0;
         FindObjectOfType<BallController>().ResetBall();
+        FindObjectOfType<HelixController>().LoadStage(currentStage);
         //Reload Stage
     }
     public void AddScore(int scoreToAdd)
