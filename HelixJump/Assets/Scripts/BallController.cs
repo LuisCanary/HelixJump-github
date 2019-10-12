@@ -16,8 +16,10 @@ public class BallController : MonoBehaviour
     private bool isSuperSpeedActive;
     [SerializeField]
     private float superSpeed = 10f;
+	[SerializeField]
+	private int perfectPassCount = 3;
 
-    private Vector3 startPos;
+	private Vector3 startPos;
 
     private void Start()
     {
@@ -60,7 +62,7 @@ public class BallController : MonoBehaviour
 
     private void Update()
     {
-        if (perfectPass>=3 && !isSuperSpeedActive)
+        if (perfectPass>= perfectPassCount && !isSuperSpeedActive)
         {
             isSuperSpeedActive = true;
             rb.AddForce(Vector3.down*superSpeed,ForceMode.Impulse);

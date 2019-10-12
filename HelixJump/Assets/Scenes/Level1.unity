@@ -645,6 +645,7 @@ MonoBehaviour:
   perfectPass: 0
   isSuperSpeedActive: 0
   superSpeed: 10
+  perfectPassCount: 3
 --- !u!54 &1200619697
 Rigidbody:
   m_ObjectHideFlags: 0
