@@ -1,8 +1,12 @@
 # HelixJump-github
 
-1-Reduce sensibility
-2-Improve learning curve and difficulty
-3-Improve visual of the ball and when it collides with the floor
-4-Sounds?
-5-Level progrees
-6-Particles
+
+-When passing throught the last platform is destroyed with animation
+-Improve learning curve and difficulty
+-Change palette colors
+-Trail ball and splash with floor and particles
+-Sounds?
+-Ball animation
+-Smooth offset move
+-Small dust particles background
+-When superSpeed change color and particles
