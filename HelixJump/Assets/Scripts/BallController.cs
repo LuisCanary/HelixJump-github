@@ -8,6 +8,8 @@ public class BallController : MonoBehaviour
     private bool ignoreNextCollision;
 
 	[SerializeField]
+	private GameObject splash;
+	[SerializeField]
 	private GameObject normalTrail;
 	[SerializeField]
 	private GameObject superSpeedTrail;
@@ -33,6 +35,9 @@ public class BallController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+		
+		InstantiateSplash(collision);
+
 		gameObject.GetComponent<Animation>().Play("BallS&S");//Squash and strech
 
         if (ignoreNextCollision)        
@@ -51,7 +56,7 @@ public class BallController : MonoBehaviour
                 deathPart.HitDeathPart();
             }
         }      
-
+	
         rb.velocity = Vector3.zero;
         rb.AddForce(Vector3.up * impulseForce,ForceMode.Impulse);
 
@@ -96,4 +101,13 @@ public class BallController : MonoBehaviour
         transform.position = startPos;
     }
 
+	public void InstantiateSplash(Collision collision)
+	{
+		GameObject newSplash;
+		newSplash = Instantiate(splash);
+		newSplash.transform.SetParent(collision.transform);
+		newSplash.transform.position = new Vector3(this.transform.position.x, (this.transform.position.y-0.11f), this.transform.position.z);
+		Destroy(newSplash, 3);
+
+	}
 }	
