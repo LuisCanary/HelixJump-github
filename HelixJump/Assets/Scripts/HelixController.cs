@@ -66,12 +66,8 @@ public class HelixController : MonoBehaviour
             return;
         }
 
-        //Change color of background
-        Camera.main.backgroundColor = allStages[stageNumber].stageBackgroundColor;
         //Change color of the ball
         FindObjectOfType<BallController>().GetComponent<Renderer>().material.color = allStages[stageNumber].stageBallColor;
-		//Change trail color
-		//FindObjectOfType<Trail>().GetComponent<Renderer>().material.color = allStages[stageNumber].stageBallColor;
 
 		//Reset helix rotation
 		transform.localEulerAngles = startRotation;
@@ -109,9 +105,7 @@ public class HelixController : MonoBehaviour
                     disabledParts.Add(randomPart);
                 }
             }
-
-
-            
+         
             List<GameObject> leftParts = new List<GameObject>();
             foreach (Transform t in level.transform)
             {

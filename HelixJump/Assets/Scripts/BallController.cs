@@ -7,7 +7,11 @@ public class BallController : MonoBehaviour
 
     private bool ignoreNextCollision;
 
-    private Rigidbody rb;
+	[SerializeField]
+	private GameObject normalTrail;
+	[SerializeField]
+	private GameObject superSpeedTrail;
+	private Rigidbody rb;
     [SerializeField]
     private float impulseForce = 5f;
     [HideInInspector]
@@ -29,12 +33,14 @@ public class BallController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+		gameObject.GetComponent<Animation>().Play("BallS&S");//Squash and strech
+
         if (ignoreNextCollision)        
             return;
 
         if (isSuperSpeedActive && !collision.transform.GetComponent<Goal>())
-        {
-             Destroy(collision.transform.parent.gameObject,0.2f);
+        {			
+			Destroy(collision.transform.parent.gameObject,0.2f);
         }
         else
         {
@@ -63,8 +69,20 @@ public class BallController : MonoBehaviour
         if (perfectPass>= perfectPassCount && !isSuperSpeedActive)
         {
             isSuperSpeedActive = true;
-            rb.AddForce(Vector3.down*superSpeed,ForceMode.Impulse);
+
+			gameObject.GetComponent<Animation>().Play("BallSquash");
+
+			rb.AddForce(Vector3.down*superSpeed,ForceMode.Impulse);
+
+			normalTrail.SetActive(false);
+			superSpeedTrail.SetActive(true);
+
         }
+		if (!isSuperSpeedActive)
+		{
+			normalTrail.SetActive(true);
+			superSpeedTrail.SetActive(false);
+		}
           
     }
 
@@ -78,4 +96,4 @@ public class BallController : MonoBehaviour
         transform.position = startPos;
     }
 
-}
+}	

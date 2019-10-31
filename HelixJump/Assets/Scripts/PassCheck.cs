@@ -8,5 +8,11 @@ public class PassCheck : MonoBehaviour
     {
         GameManager.singleton.AddScore(1);
         FindObjectOfType<BallController>().perfectPass++;
+		if (gameObject.name!=("HelixTop"))
+		{
+			gameObject.SetActive(false);
+		}
+
+
     }
 }
