@@ -8,12 +8,14 @@ public class HelixController : MonoBehaviour
     private Vector2 lastTapPos;
     private Vector3 startRotation;
 
+	[SerializeField]
+	private float sensibility = 0;
+ 
+    public Transform topTransform;
     [SerializeField]
-    private Transform topTransform;
+    public Transform goalTransform;
     [SerializeField]
-    private Transform goalTransform;
-    [SerializeField]
-    private GameObject helixLevelPrefab;
+    private GameObject helixLevelPrefab=null;
 
     public List<Stage> allStages = new List<Stage>();
     private float helixDistance;
@@ -45,7 +47,7 @@ public class HelixController : MonoBehaviour
 
             lastTapPos = currentTapPos;
 
-            transform.Rotate(Vector3.up * delta);
+            transform.Rotate(Vector3.up * delta* sensibility);
         }
         if (Input.GetMouseButtonUp(0))
         {
@@ -68,9 +70,11 @@ public class HelixController : MonoBehaviour
         Camera.main.backgroundColor = allStages[stageNumber].stageBackgroundColor;
         //Change color of the ball
         FindObjectOfType<BallController>().GetComponent<Renderer>().material.color = allStages[stageNumber].stageBallColor;
+		//Change trail color
+		//FindObjectOfType<Trail>().GetComponent<Renderer>().material.color = allStages[stageNumber].stageBallColor;
 
-        //Reset helix rotation
-        transform.localEulerAngles = startRotation;
+		//Reset helix rotation
+		transform.localEulerAngles = startRotation;
 
         //Destroy old levels if there are any
         foreach (GameObject go in spawnedLevels)

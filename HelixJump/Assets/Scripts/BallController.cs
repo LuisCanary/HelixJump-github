@@ -44,9 +44,7 @@ public class BallController : MonoBehaviour
             {
                 deathPart.HitDeathPart();
             }
-        }
-
-        
+        }      
 
         rb.velocity = Vector3.zero;
         rb.AddForce(Vector3.up * impulseForce,ForceMode.Impulse);

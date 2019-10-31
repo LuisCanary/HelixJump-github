@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     [HideInInspector]
@@ -10,10 +10,12 @@ public class GameManager : MonoBehaviour
     [HideInInspector]
     public int score;
     [SerializeField]
-    private int currentStage = 0;
+    public static int currentStage = 0;
 
     public static GameManager singleton;
 
+	[SerializeField]
+	public Text textPlus1;
 
     private void Awake()
     {
@@ -43,8 +45,15 @@ public class GameManager : MonoBehaviour
         FindObjectOfType<HelixController>().LoadStage(currentStage);
         //Reload Stage
     }
+
+	/// <summary>
+	/// Add the score and also animation +1
+	/// </summary>
+	/// <param name="scoreToAdd"></param>
     public void AddScore(int scoreToAdd)
     {
+
+		textPlus1.GetComponent<Animation>().Play();
         score += scoreToAdd;
         if (score>best)
         {
