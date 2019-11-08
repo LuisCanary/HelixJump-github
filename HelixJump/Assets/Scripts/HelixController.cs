@@ -5,6 +5,7 @@ using UnityEngine;
 public class HelixController : MonoBehaviour
 {
 
+	public static GameObject helixRod;
     private Vector2 lastTapPos;
     private Vector3 startRotation;
 
