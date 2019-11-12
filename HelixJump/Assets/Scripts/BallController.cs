@@ -10,6 +10,8 @@ public class BallController : MonoBehaviour
 	[SerializeField]
 	private GameObject splash;
 	[SerializeField]
+	private GameObject splashEffect;
+	[SerializeField]
 	private GameObject normalTrail;
 	[SerializeField]
 	private GameObject superSpeedTrail;
@@ -103,9 +105,14 @@ public class BallController : MonoBehaviour
 
 	public void InstantiateSplash(Collision collision)
 	{
+
 		GameObject newSplash;
+		GameObject newSplashEffect;
 		newSplash = Instantiate(splash);
+		newSplashEffect=Instantiate(splashEffect);
+		newSplashEffect.transform.SetParent(collision.transform);
 		newSplash.transform.SetParent(collision.transform);
+		//newSplashEffect.transform.position = new Vector3(this.transform.position.x, (this.transform.position.y), this.transform.position.z);
 		newSplash.transform.position = new Vector3(this.transform.position.x, (this.transform.position.y-0.11f), this.transform.position.z);
 		Destroy(newSplash, 3);
 

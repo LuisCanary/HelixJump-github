@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HelixController : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class HelixController : MonoBehaviour
 	public static GameObject helixRod;
     private Vector2 lastTapPos;
     private Vector3 startRotation;
+
+	[SerializeField]
+	public GameObject imageBackground;
 
 	[SerializeField]
 	private float sensibility = 0;
@@ -69,6 +73,9 @@ public class HelixController : MonoBehaviour
 
         //Change color of the ball
         FindObjectOfType<BallController>().GetComponent<Renderer>().material.color = allStages[stageNumber].stageBallColor;
+
+		//Change the background 
+		imageBackground.GetComponent<Image>().sprite = allStages[stageNumber].background;
 
 		//Reset helix rotation
 		transform.localEulerAngles = startRotation;

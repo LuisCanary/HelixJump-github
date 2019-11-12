@@ -980,6 +980,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 715371360}
   m_CullTransparentMesh: 0
+--- !u!1 &768697839 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7824671681542579052, guid: ad98f0fe7dfc13642a65c3cbeb6a0ff8,
+    type: 3}
+  m_PrefabInstance: {fileID: 4873524847321703898}
+  m_PrefabAsset: {fileID: 0}
+--- !u!111 &768697846
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 768697839}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &847458569
 GameObject:
   m_ObjectHideFlags: 0
@@ -1087,6 +1108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 747e43f956df5d445a4f76ea31892b8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  imageBackground: {fileID: 1273272581}
   sensibility: 0.5
   topTransform: {fileID: 1109117638}
   goalTransform: {fileID: 5860134029750780082}
@@ -1254,7 +1276,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.91764706, b: 0.49803922, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1393,6 +1415,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   splash: {fileID: 6196485915055338584, guid: 8c2a2e1b81925494284fa503b2634b48, type: 3}
+  splashEffect: {fileID: 6161416397579604507, guid: 64cdc6ff30076fa46875c9db9ffd0e75,
+    type: 3}
   normalTrail: {fileID: 1752456524}
   superSpeedTrail: {fileID: 529255259}
   impulseForce: 5.5
@@ -1491,7 +1515,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 87759bb7d8130ef4c9e591f273cb2d03, type: 3}
+  m_Sprite: {fileID: 21300000, guid: be68e1cd4fee47e43bcbfba59a440a10, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1683,7 +1707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.2735849, g: 0.2735849, b: 0.2735849, a: 1}
+  m_Color: {r: 0.7075472, g: 0.7075472, b: 0.7075472, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1877,6 +1901,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 35.84, y: 0, z: 0}
+--- !u!1 &1620952258 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9014869439189358072, guid: 247ec23f4c0fcce4ea7ea5e10fd0f590,
+    type: 3}
+  m_PrefabInstance: {fileID: 6645404389713476688}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1620952261
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1620952258}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 76847d935a094b645bdf916955855a85, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1708052958
 GameObject:
   m_ObjectHideFlags: 0
@@ -2265,7 +2314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.91764706, b: 0.49803922, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2340,7 +2389,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7075472, g: 0.7075472, b: 0.7075472, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2431,7 +2480,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3703272402800129671, guid: ad98f0fe7dfc13642a65c3cbeb6a0ff8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3703272402800129671, guid: ad98f0fe7dfc13642a65c3cbeb6a0ff8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ad98f0fe7dfc13642a65c3cbeb6a0ff8, type: 3}
 --- !u!4 &5860134029750780082 stripped
 Transform:

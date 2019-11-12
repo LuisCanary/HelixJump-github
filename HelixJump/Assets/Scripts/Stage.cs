@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.UI;
 
 
 [Serializable]
@@ -17,7 +18,7 @@ public class Level
 [CreateAssetMenu(fileName ="New Stage")]
 public class Stage : ScriptableObject
 {
-
+	public Sprite background;
     public Color stageLevelPartColor = Color.white;
     public Color stageBallColor = Color.white;
     public List<Level> levels = new List<Level>();

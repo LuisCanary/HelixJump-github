@@ -6,7 +6,6 @@ public class PassCheck : MonoBehaviour
 {
 
 	string name="Ball";
-	Vector3 contrary;
 
 	List<GameObject> children = new List<GameObject>();
 
@@ -31,11 +30,8 @@ public class PassCheck : MonoBehaviour
 
 			if (gameObject.name != ("HelixTop"))
 			{
-				children.GetComponent<Rigidbody>().isKinematic = false;
-				children.transform.position += contrary;
-				//children.GetComponent<Rigidbody>().useGravity = true;
-				StartCoroutine(WaitToDestroy(children));
-				
+				children.GetComponent<Animation>().Play("Helix");
+				StartCoroutine(WaitToDestroy(children));				
 			}
 		}
 
